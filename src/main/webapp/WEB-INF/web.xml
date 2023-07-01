@@ -5,19 +5,19 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
-  <servlet>
-    <servlet-name>Jersey REST Service</servlet-name>
-    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-    <init-param>
-      <param-name>jersey.config.server.provider.packages</param-name>
-      <param-value>service</param-value>
-    </init-param>
+  <servlet>   <!--Это элемент, определяющий сервлет в контексте веб-приложения.-->
+    <servlet-name>Jersey REST Service</servlet-name> <!-- имя сервлета.-->
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class> <!--Указывает полное имя класса, который будет использоваться для обработки запросов. Здесь указан класс org.glassfish.jersey.servlet.ServletContainer, который является контейнером сервлета Jersey.-->
+    <init-param>  <!--Определяет параметры и их значения для конфигурации сервлета.-->
+      <param-name>jersey.config.server.provider.packages</param-name> <!--Устанавливает имя параметра конфигурации.-->
+      <param-value>service</param-value> <!--Устанавливает значение параметра конфигурации. Здесь указано значение "service", которое предполагает, что классы сервиса будут находиться в пакете с именем "service".-->
+    </init-param>  <!--Указывает порядок загрузки сервлета при старте приложения. Значение "1" указывает на загрузку сервлета при старте приложения.-->
     <load-on-startup>1</load-on-startup>
   </servlet>
 
-  <servlet-mapping>
-    <servlet-name>Jersey REST Service</servlet-name>
-    <url-pattern>/rest/*</url-pattern>
+  <servlet-mapping> <!--Определяет соответствие между сервлетом и URL-шаблонами, к которым он должен обрабатывать запросы.-->
+    <servlet-name>Jersey REST Service</servlet-name>  <!--Указывает имя сервлета, для которого определено соответствие.-->
+    <url-pattern>/rest/*</url-pattern> <!--Определяет URL-шаблон, который будет обрабатываться сервлетом. Здесь указан шаблон "/rest/*", что означает, что все запросы, начинающиеся с "/rest/", будут обрабатываться сервлетом.-->
   </servlet-mapping>
 
 </web-app>
